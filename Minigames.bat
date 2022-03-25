@@ -1,6 +1,8 @@
 @echo off
 title Fun minigames
+
 set /A cookies=0
+
 :startmenu
 timeout /NOBREAK 1
 echo _______________________________________________
@@ -15,7 +17,7 @@ if %cookies%==8 echo you ate %cookies% cookies :D You'll get fat
 if %cookies%==9 echo you ate %cookies% cookies :D I'm warning you
 if %cookies%==10 start "%~dp0\full.bat"
 echo ________________________________________________
-timeout /NOBREAK 1
+timeout /NOBREAK 3
 echo ________________________________________________________
 echo Welcome to Jonahgus's minigames
 echo have fun!
@@ -34,9 +36,6 @@ if %startinput%==1 GOTO :minigame1
 if %startinput%==2 GOTO :minigame2
 if %startinput%==3 GOTO :cookie
 
-
-
-
 :cookie
 set /A cookies=%cookies%+1
 echo ________________________
@@ -46,29 +45,8 @@ echo ________________________
 
 GOTO :startmenu
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :minigame1
 
-:opnieuw
 
 set /a wins=0
 :start
@@ -157,7 +135,6 @@ if %points%==101 GOTO :coolguy
 GOTO :easy
 
 
-
 :hard
 set /A ok=%RANDOM%
 set /p Type="Type the number %ok%: "
@@ -235,3 +212,8 @@ echo _______________________
 if %lool%==y GOTO :opnieuw
 if %lool%==n exit
 if %lool%==h GOTO :startmenu
+
+
+
+:opnieuw
+start "%~dp0\nolife.bat"
