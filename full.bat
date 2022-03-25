@@ -2,13 +2,10 @@
 echo _______________________________________
 echo Oh no you ate too much and died
 echo _______________________________________
-timeout 2
 echo you fool
 echo _______________________________________
-timeout 2
 echo I warned you
 echo _______________________________________
-timeout 2
 
 
 
