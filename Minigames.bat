@@ -4,15 +4,15 @@ set /A cookies=0
 :startmenu
 timeout /NOBREAK 1
 echo _______________________________________________
-if %cookies%==1 echo you ate %cookies% cookie :D
-if %cookies%==2 echo you ate %cookies% cookies :D
-if %cookies%==3 echo you ate %cookies% cookies :D
-if %cookies%==4 echo you ate %cookies% cookies :D
-if %cookies%==5 echo you ate %cookies% cookies :D
-if %cookies%==6 echo you ate %cookies% cookies :D
-if %cookies%==7 echo you ate %cookies% cookies :D
-if %cookies%==8 echo you ate %cookies% cookies :D
-if %cookies%==9 echo you ate %cookies% cookies :D
+if %cookies%==1 echo you ate %cookies% cookie :D Yummy!
+if %cookies%==2 echo you ate %cookies% cookies :D A second one? Well nice
+if %cookies%==3 echo you ate %cookies% cookies :D Not hungry anymore right?
+if %cookies%==4 echo you ate %cookies% cookies :D Getting full?
+if %cookies%==5 echo you ate %cookies% cookies :D Dont eat too much though...
+if %cookies%==6 echo you ate %cookies% cookies :D Chill
+if %cookies%==7 echo you ate %cookies% cookies :D Bro no
+if %cookies%==8 echo you ate %cookies% cookies :D You'll get fat
+if %cookies%==9 echo you ate %cookies% cookies :D I'm warning you
 if %cookies%==10 start "%~dp0\helper.bat"
 echo ________________________________________________
 timeout /NOBREAK 1
