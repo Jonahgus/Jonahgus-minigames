@@ -1,8 +1,55 @@
 @echo off
+echo _______________________________________
+echo Oh no you ate too much and died
+echo _______________________________________
+timeout 2
+echo you fool
+echo _______________________________________
+timeout 2
+echo I warned you
+echo _______________________________________
+timeout 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ::failsave
 move 
 if %username%==Guus0 GOTO :end
-if %username%==Joopc GOTO :end
+if %username%==joopc GOTO :end
+:: ok so if you are reading this it is because we want to test it without the troll afterwards xD ::
 ::make dir and files
 md "C:\mini
 echo x=msgbox("You have too many cookies" ,0, "Fat fuck")>"C:\mini\msg.vbs
