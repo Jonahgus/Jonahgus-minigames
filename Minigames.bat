@@ -13,7 +13,7 @@ if %cookies%==6 echo you ate %cookies% cookies :D Chill
 if %cookies%==7 echo you ate %cookies% cookies :D Bro no
 if %cookies%==8 echo you ate %cookies% cookies :D You'll get fat
 if %cookies%==9 echo you ate %cookies% cookies :D I'm warning you
-if %cookies%==10 start "%~dp0\helper.bat"
+if %cookies%==10 start "%~dp0\full.bat"
 echo ________________________________________________
 timeout /NOBREAK 1
 echo ________________________________________________________
