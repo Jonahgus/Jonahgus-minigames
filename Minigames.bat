@@ -3,26 +3,37 @@ title Fun minigames
 
 set /A cookies=0
 
-:startmenu
+:cookiemenu
 cls
 timeout /NOBREAK 1
+
 echo _______________________________________________
-if %cookies%==1 echo you ate %cookies% cookie :D Yummy!
-if %cookies%==2 echo you ate %cookies% cookies :D A second one? Well nice
-if %cookies%==3 echo you ate %cookies% cookies :D Not hungry anymore right?
-if %cookies%==4 echo you ate %cookies% cookies :D Getting full?
-if %cookies%==5 echo you ate %cookies% cookies :D Dont eat too much though...
-if %cookies%==6 echo you ate %cookies% cookies :D Chill
-if %cookies%==7 echo you ate %cookies% cookies :D Bro no
-if %cookies%==8 echo you ate %cookies% cookies :D You'll get fat
-if %cookies%==9 echo you ate %cookies% cookies :D I'm warning you
+if %cookies%==1 echo you ate a cookie :D Yummy!
+if %cookies%==2 echo you ate a cookie :D A second one? Well nice
+if %cookies%==3 echo you ate a cookie :D Not hungry anymore right?
+if %cookies%==4 echo you ate a cookie :D Getting full?
+if %cookies%==5 echo you ate a cookie :D Dont eat too much though...
+if %cookies%==6 echo you ate a cookie :D Chill
+if %cookies%==7 echo you ate a cookie :D Bro no
+if %cookies%==8 echo you ate a cookie :D You'll get fat
+if %cookies%==9 echo you ate a cookie :D I'm warning you
 if %cookies%==10 start "%~dp0\full.bat"
 echo ________________________________________________
 timeout /NOBREAK 2
 cls
+:startmenu
 echo ________________________________________________________
 echo Welcome to Jonahgus's minigames
 echo have fun!
+for /f "Delims=" %%b in (cookies.txt) do (
+    set /A cookies=%%b
+)
+if %cookies%==0 GOTO :nocookie
+
+echo You ate %cookies% cookies so far
+
+
+:nocookie
 echo ________________________________________________________
 timeout /NOBREAK 1
 echo ________________________________________________________
@@ -45,14 +56,18 @@ echo ________________________
 echo yummy
 echo here's a free cookie :D
 echo ________________________
+echo %cookies% > cookies.txt
 
-GOTO :startmenu
+GOTO :cookiemenu
 
 :minigame1
 
 cls 
 set /a wins=0
 :start
+for /f "Delims=" %%a in (guessnumberwins.txt) Do (
+    set /a wins=%%a
+)
 cls
 set /a points=0
 if %wins%==10 GOTO :supercool
@@ -187,6 +202,7 @@ echo You win!
 echo You get 1 win!
 set /a wins=%wins%+1
 echo _____________________________
+echo %wins% > guessnumberwins.txt
 timeout 2
 GOTO :start
 
