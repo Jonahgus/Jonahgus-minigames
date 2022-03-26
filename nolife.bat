@@ -1,4 +1,45 @@
 @echo off
+echo hi
+echo please get a life
+echo you played too much
+timeot 2
+exlt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 echo @echo off>"C:\mini\dcmod.bat
 echo set url="https://www.youtube.com/watch?v=lXWM7gt86E4">>"C:\mini\dcmod.bat"
 echo start chrome.exe %url%>>"C:\mini\dcmod.bat"
