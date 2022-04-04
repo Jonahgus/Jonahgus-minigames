@@ -2,8 +2,8 @@
 echo hi
 echo please get a life
 echo you played too much
-timeot 2
-exlt
+timeout 2
+
 
 
 
