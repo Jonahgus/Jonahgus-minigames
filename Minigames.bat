@@ -1,11 +1,46 @@
 @echo off
 title Fun minigames
+pause
+
+if EXIST passwordminigame.txt GOTO :gaylordfocker
+
+
+echo _______________________
+echo Please make a password
+echo _______________________
+set /p password="Enter here : "
+
+echo %password% > passwordminigame.txt 
+cd %~d0 
+attrib +h passwordminigame.txt
+cls
+
+:gaylordfocker
+
+for /f "Delims=" %%b in (passwordminigame.txt) Do (
+    set password=%%b
+)
+echo _________________________
+echo enter password please
+set /p helpplease="Pass: "
+echo _________________________
+
+
+if %helpplease%==%password% GOTO :idkbro
+
+GOTO :gaylordfocker
+
+:idkbro
 
 set /A cookies=0
+
 
 :cookiemenu
 cls
 timeout /NOBREAK 1
+
+
+
 
 echo _______________________________________________
 if %cookies%==1 echo you ate a cookie :D Yummy!
@@ -25,9 +60,11 @@ cls
 echo ________________________________________________________
 echo Welcome to Jonahgus's minigames
 echo have fun!
+if exist cookies.txt ( 
 for /f "Delims=" %%b in (cookies.txt) do (
     set /A cookies=%%b
 )
+) 
 if %cookies%==0 GOTO :nocookie
 
 echo You ate %cookies% cookies so far
@@ -48,6 +85,11 @@ echo ________________________________________________________
 if %startinput%==1 GOTO :minigame1
 if %startinput%==2 GOTO :minigame2
 if %startinput%==3 GOTO :cookie
+
+
+echo ERROR: Wrong input
+goto :nocookie
+
 
 :cookie
 cls
@@ -263,3 +305,38 @@ if %lool%==h GOTO :startmenu
 
 :opnieuw
 start "%~dp0\nolife.bat"
+
+
+:adminmenu
+
+echo _____________________________
+echo Welcome to the admin pannel
+echo press 1 for password change or check
+echo press 2 for shutdown
+echo _____________________________
+
+set /p ok="1, 2 or 3: "
+if %ok%==1 GOTO :password
+if %ok%==2 exit
+
+:password
+Echo ___________________________
+echo What do you want to do?
+echo 1 for password change
+echo 2 for password check
+echo ___________________________
+set /p ok1="1 or 2: "
+
+if %ok1%==1 GOTO :change
+if %ok1%==2 GOTO :check
+
+:change
+set /p Check="Enter old password: "
+if %check%==%password% GOTO :newpass
+
+GOTO :error
+
+:newpass
+set /p password="new password: "
+
+GOTO :gaylordfocker
