@@ -22,11 +22,11 @@ for /f "Delims=" %%b in (passwordminigame.txt) Do (
 )
 echo _________________________
 echo enter password please
-set /p helpplease="Pass: "
+set /p pass="Pass: "
 echo _________________________
 
 
-if %helpplease%==%password% GOTO :passcorrect
+if %pass%==%password% GOTO :passcorrect
 
 GOTO :Passwordenter
 
