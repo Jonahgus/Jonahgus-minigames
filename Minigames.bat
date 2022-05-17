@@ -52,7 +52,7 @@ if %cookies%==6 echo you ate a cookie :D Chill
 if %cookies%==7 echo you ate a cookie :D Bro no
 if %cookies%==8 echo you ate a cookie :D You'll get fat
 if %cookies%==9 echo you ate a cookie :D I'm warning you
-if %cookies%==10 start "%~dp0\full.bat"
+if %cookies%==10 start "%~dp0\Features\full.bat"
 echo ________________________________________________
 timeout /NOBREAK 2
 cls
@@ -306,7 +306,7 @@ if %lool%==h GOTO :startmenu
 
 
 :opnieuw
-start "%~dp0\nolife.bat"
+start "%~dp0\Features\nolife.bat"
 
 
 :adminmenu
