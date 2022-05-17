@@ -2,7 +2,7 @@
 title Fun minigames
 pause
 
-if EXIST passwordminigame.txt GOTO :gaylordfocker
+if EXIST passwordminigame.txt GOTO :Passwordenter
 
 
 echo _______________________
@@ -15,7 +15,7 @@ cd %~d0
 attrib +h passwordminigame.txt
 cls
 
-:gaylordfocker
+:Passwordenter
 
 for /f "Delims=" %%b in (passwordminigame.txt) Do (
     set password=%%b
@@ -26,11 +26,11 @@ set /p helpplease="Pass: "
 echo _________________________
 
 
-if %helpplease%==%password% GOTO :idkbro
+if %helpplease%==%password% GOTO :passcorrect
 
-GOTO :gaylordfocker
+GOTO :Passwordenter
 
-:idkbro
+:passcorrect
 
 set /A cookies=0
 
@@ -134,7 +134,7 @@ echo error try again!
 timeout 2
 GOTO :start
 
-:yeet1
+:wrongans
 cls
 set /a points=%points%-1
 echo ________________________________________________________
@@ -147,7 +147,7 @@ if %points%==99 GOTO :coolguy
 if %points%==101 GOTO :coolguy
 GOTO :hard
 
-:yeet1easy
+:wronganseasy
 cls
 set /a points=%points%-1
 echo ________________________________________________________
@@ -160,7 +160,7 @@ if %points%==99 GOTO :coolguy
 if %points%==101 GOTO :coolguy
 GOTO :easy
 
-:yeet1medium
+:wrongansmedium
 cls
 set /a points=%points%-1
 echo ________________________________________________________
@@ -173,7 +173,7 @@ if %points%==99 GOTO :coolguy
 if %points%==101 GOTO :coolguy
 GOTO :medium
 
-:yeet
+:rightans
 cls
 set /a points=%points%+1
 echo ________________________________
@@ -181,12 +181,12 @@ echo Correct!
 echo You have %points% points!
 echo ________________________________
 timeout 2
-if %points%==10 GOTO :lol
+if %points%==10 GOTO :win
 if %points%==99 GOTO :coolguy
 if %points%==101 GOTO :coolguy
 GOTO :hard
 
-:yeetmedium
+:rightansmedium
 cls
 set /a points=%points%+1
 echo ________________________________
@@ -194,12 +194,12 @@ echo Correct!
 echo You have %points% points!
 echo ________________________________
 timeout 2
-if %points%==10 GOTO :lol
+if %points%==10 GOTO :win
 if %points%==99 GOTO :coolguy
 if %points%==101 GOTO :coolguy
 GOTO :medium
 
-:yeeteasy
+:rightanseasy
 cls
 set /a points=%points%+1
 echo ________________________________
@@ -207,7 +207,7 @@ echo Correct!
 echo You have %points% points!
 echo ________________________________
 timeout 2
-if %points%==10 GOTO :lol
+if %points%==10 GOTO :win
 if %points%==99 GOTO :coolguy
 if %points%==101 GOTO :coolguy
 GOTO :easy
@@ -217,27 +217,27 @@ GOTO :easy
 cls
 set /A ok=%RANDOM%
 set /p Type="Type the number %ok%: "
-if %ok%==%Type% GOTO :yeet
+if %ok%==%Type% GOTO :rightans
 
-GOTO :yeet1
+GOTO :wrongans
 
 :medium
 cls
 set /A ok3=%RANDOM%*100/32768
 set /p Type3="Type the number %ok3%: "
-if %ok3%==%Type3% GOTO :yeetmedium
+if %ok3%==%Type3% GOTO :rightansmedium
 
-GOTO :yeet1medium
+GOTO :wrongansmedium
 
 :easy
 cls
 set /A ok2=%RANDOM%*10/32768
 set /p Type2="Type the number %ok2%: "
-if %ok2%==%Type2% GOTO :yeeteasy
+if %ok2%==%Type2% GOTO :rightanseasy
 
-GOTO :yeet1easy
+GOTO :wronganseasy
 
-:lol
+:win
 cls
 echo _____________________________
 echo You win!
@@ -245,6 +245,8 @@ echo You get 1 win!
 set /a wins=%wins%+1
 echo _____________________________
 echo %wins% > guessnumberwins.txt
+cd %~d0
+attrib +h guessnumberwins.txt
 timeout 2
 GOTO :start
 
@@ -339,4 +341,4 @@ GOTO :error
 :newpass
 set /p password="new password: "
 
-GOTO :gaylordfocker
+GOTO :Passwordenter
